@@ -15,7 +15,7 @@
     <meta property="og:title" content="<?= get_setting('site_name') ?>" />
     <meta property="og:description" content="<?= get_setting('site_description') ?>" />
     <meta property="og:site_name" content="<?= get_setting('site_name') ?>" />
-    <meta property="og:image" content="/assets/frontend/teaser/images/thumb.jpg" />
+    <meta property="og:image" content="/assets/frontend/teaser/images/thumb.jpg?v=2" />
     
     <link rel="stylesheet" href="/assets/frontend/home/v1/css/slick-theme.css" />
     <link rel="stylesheet" href="/assets/frontend/home/v1/css/slick.css" />
