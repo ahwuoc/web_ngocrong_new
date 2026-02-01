@@ -1,0 +1,288 @@
+/* Import the Bangers font */
+@font-face {
+    font-family: 'Bangers';
+    src: url('../frontend/home/v1/fonts/Bangers-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Import additional fonts for game sections */
+@font-face {
+    font-family: 'RussoOne';
+    src: url('../frontend/home/v1/fonts/RussoOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Righteous';
+    src: url('../frontend/home/v1/fonts/Righteous-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Style the breadcrumb with the new font */
+.breadcrumb {
+    margin-bottom: 20px;
+    padding: 10px 0;
+    font-family: 'Bangers', cursive;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.breadcrumb a {
+    color: #0066cc;
+    text-decoration: none;
+    font-family: 'Bangers', cursive;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    font-family: 'Bangers', cursive;
+    color: #333;
+}
+
+/* Post header styles */
+.post-header {
+    margin-bottom: 25px;
+}
+
+.post-title {
+    font-family: 'RussoOne', sans-serif;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.post-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-family: 'Righteous', cursive;
+    font-size: 14px;
+    color: #888;
+}
+
+.post-meta .post-category a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-family: 'RussoOne', sans-serif;
+    font-weight: 700;
+}
+
+.post-meta .post-category a:hover {
+    color: #004c99;
+    text-decoration: underline;
+}
+
+.post-meta .post-author {
+    background-color: #f0f4f8;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Featured image styling */
+.post-featured-image {
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.post-featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Post content styling */
+.post-content {
+    font-family: 'Righteous', cursive;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.post-content h2, 
+.post-content h3, 
+.post-content h4 {
+    font-family: 'RussoOne', sans-serif;
+    color: #2c3e50;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+/* Social sharing */
+.post-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.social-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Righteous', cursive;
+}
+
+.social-share span {
+    font-weight: 600;
+}
+
+.social-share a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.share-facebook {
+    background-color: #3b5998;
+}
+
+.share-twitter {
+    background-color: #1da1f2;
+}
+
+/* Related posts section */
+.related-posts {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.related-posts h3 {
+    font-family: 'RussoOne', sans-serif;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.related-post-item {
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.related-post-item:hover {
+    border-color: #ccc;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+.related-post-image img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.related-post-item:hover .related-post-image img {
+    transform: scale(1.05);
+}
+
+.related-post-content {
+    padding: 15px;
+}
+
+.related-post-title {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    line-height: 1.3;
+    font-family: 'RussoOne', sans-serif;
+}
+
+.related-post-title a {
+    font-family: 'RussoOne', sans-serif;
+    color: #1a2a3a;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 700;
+}
+
+.related-post-title a:hover {
+    color: #0066cc;
+}
+
+.related-post-meta {
+    font-family: 'Righteous', cursive;
+    font-size: 13px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.related-post-meta .post-author {
+    background-color: #f0f4f8;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .post-title {
+        font-size: 28px;
+    }
+    
+    .related-posts-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .post-title {
+        font-size: 24px;
+    }
+    
+    .post-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+    }
+}

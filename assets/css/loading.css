@@ -1,0 +1,47 @@
+/* Simple Loading Page Effect */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.page-loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-gif {
+    width: 120px;
+    height: 120px;
+}
+
+.loader-gif img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .loader-gif {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-gif {
+        width: 80px;
+        height: 80px;
+    }
+}

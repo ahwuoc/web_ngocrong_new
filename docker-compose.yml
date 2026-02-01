@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - DB_HOST=103.228.36.195
+      - DB_NAME=nro_v1
+      - DB_USER=ahwuocdz
+      - DB_PASS=123456
+      - DB_CHARSET=utf8

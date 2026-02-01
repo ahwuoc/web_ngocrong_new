@@ -1,0 +1,569 @@
+/* Auth Pages Styles */
+.auth-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.auth-container {
+    background: white;
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+.auth-header h1 {
+    color: #333;
+    font-size: 24px;
+    margin: 0;
+}
+
+.auth-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group small {
+    color: #888;
+    font-size: 12px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #667eea;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #5a67d8;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.alert-error {
+    background: #fed7d7;
+    color: #9b2c2c;
+    border: 1px solid #feb2b2;
+}
+
+.alert-success {
+    background: #c6f6d5;
+    color: #2f855a;
+    border: 1px solid #9ae6b4;
+}
+
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-links p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.auth-links a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    text-decoration: underline;
+}
+
+/* Category and Post Pages */
+.main-content {
+    padding: 40px 0;
+    background: #f8f9fa;
+    min-height: 70vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.breadcrumb a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.category-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.category-header h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.category-description {
+    color: #666;
+    font-size: 16px;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.post-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.post-item:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 20px;
+}
+
+.post-title {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+}
+
+.post-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-title a:hover {
+    color: #667eea;
+}
+
+.post-excerpt {
+    color: #666;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.post-meta {
+    font-size: 12px;
+    color: #888;
+    margin-top: 15px;
+}
+
+.post-meta span {
+    margin-right: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-link {
+    padding: 10px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    color: #667eea;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.page-link:hover {
+    background: #667eea;
+    color: white;
+}
+
+.page-link.current {
+    background: #667eea;
+    color: white;
+}
+
+/* Post Detail */
+.post-detail {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.post-header {
+    margin-bottom: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.post-header h1 {
+    color: #333;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.post-featured-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.post-featured-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.post-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    color: #333;
+    margin: 30px 0 15px 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.post-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.social-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-share a {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.share-facebook {
+    background: #3b5998;
+}
+
+.share-twitter {
+    background: #1da1f2;
+}
+
+.related-posts {
+    margin-top: 40px;
+}
+
+.related-posts h3 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.related-post-item {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.related-post-image {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.related-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.related-post-content {
+    padding: 15px;
+}
+
+.related-post-title {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.related-post-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.related-post-title a:hover {
+    color: #667eea;
+}
+
+.related-post-meta {
+    font-size: 12px;
+    color: #888;
+}
+
+.no-posts {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 20px;
+        margin: 20px;
+    }
+    
+    .post-detail {
+        padding: 20px;
+    }
+    
+    .posts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .related-posts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* User Menu Dropdown */
+.user-menu {
+    position: relative;
+}
+
+.user-menu .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+    z-index: 1000;
+    min-width: 150px;
+}
+
+.user-menu:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.user-menu .dropdown li {
+    list-style: none;
+    border-bottom: 1px solid #eee;
+}
+
+.user-menu .dropdown li:last-child {
+    border-bottom: none;
+}
+
+.user-menu .dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.user-menu .dropdown a:hover {
+    background: #f8f9fa;
+}
+
+/* Mobile User Menu - Full Menu Style */
+@media (max-width: 768px) {
+    /* Hide default dropdown behavior on mobile */
+    .user-menu .dropdown {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        min-width: auto !important;
+        display: none; /* Hidden by default, will be shown with JavaScript */
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Make dropdown items look like main menu items */
+    .user-menu .dropdown li {
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.3) !important;
+        text-align: center !important;
+        width: 100% !important;
+    }
+    
+    .user-menu .dropdown li:first-child {
+        border-top: 1px dashed rgba(255, 255, 255, 0.3) !important;
+        margin-top: 5px !important;
+    }
+    
+    .user-menu .dropdown li:last-child {
+        border-bottom: none !important;
+    }
+    
+    .user-menu .dropdown a {
+        background: transparent !important;
+        color: inherit !important;
+        padding: 8px 20px !important;
+        display: block !important;
+        text-align: center !important;
+        height: auto !important;
+        border: none !important;
+        font-size: 1.3em !important;
+    }
+    
+    .user-menu .dropdown a:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Show dropdown when active */
+    .user-menu.active .dropdown {
+        display: block !important;
+    }
+    
+    /* Remove hover effect on mobile, use click instead */
+    .user-menu:hover .dropdown {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+    
+    /* User menu toggle styling for mobile */
+    .user-menu > a {
+        cursor: pointer !important;
+        position: relative !important;
+    }
+    
+    /* Add arrow indicator for mobile */
+    .user-menu > a::after {
+        content: ' ▼';
+        font-size: 12px;
+        transition: transform 0.3s;
+    }
+    
+    .user-menu.active > a::after {
+        transform: rotate(180deg);
+    }
+}
