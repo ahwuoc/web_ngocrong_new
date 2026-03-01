@@ -12,19 +12,26 @@ if (is_logged_in()) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
+    $server_id = (int)($_POST['server'] ?? 1);
+
     if (empty($username) || empty($password)) {
         show_error('Vui lòng nhập đầy đủ thông tin.');
     } else {
-        global $pdo;
-        $stmt = $pdo->prepare("SELECT * FROM account WHERE (username = ? OR email = ?) LIMIT 1");
+        // Sử dụng PDO tương ứng với server được chọn
+        global $pdo1, $pdo2;
+        $active_pdo = ($server_id == 2) ? $pdo2 : $pdo1;
+        
+        $stmt = $active_pdo->prepare("SELECT * FROM account WHERE (username = ? OR email = ?) LIMIT 1");
         $stmt->execute([$username, $username]);
         $user = $stmt->fetch();
+        
         if ($user && $password === $user['password']) {
             $_SESSION['user_id'] = $user['id'];
+            $_SESSION['server_id'] = $server_id; // Lưu lại server vừa đăng nhập
             show_success('Đăng nhập thành công!');
             redirect('/');
         } else {
-            show_error('Sai tài khoản hoặc mật khẩu.');
+            show_error('Sai tài khoản hoặc mật khẩu tại Server ' . $server_id);
         }
     }
 }
@@ -52,6 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label for="username" class="post-label">Tài khoản hoặc Email</label>
                         <input type="text" name="username" id="username" class="post-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="server" class="post-label">Chọn Server</label>
+                        <select name="server" id="server" class="post-input">
+                            <option value="1">Server 1 (Rồng 1 Sao)</option>
+                            <option value="2">Server 2 (Rồng 2 Sao)</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="password" class="post-label">Mật khẩu</label>

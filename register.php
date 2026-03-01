@@ -14,21 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
     $confirm = $_POST['confirm'] ?? '';
+    $server_id = (int)($_POST['server'] ?? 1);
     if (empty($username) || empty($email) || empty($password) || empty($confirm)) {
         show_error('Vui lòng nhập đầy đủ thông tin.');
     } elseif ($password !== $confirm) {
         show_error('Mật khẩu xác nhận không khớp.');
     } else {
-        global $pdo;
-        // Kiểm tra username/email đã tồn tại
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM account WHERE username = ? OR email = ?");
+        global $pdo1, $pdo2;
+        $active_pdo = ($server_id == 2) ? $pdo2 : $pdo1;
+        $stmt = $active_pdo->prepare("SELECT COUNT(*) FROM account WHERE username = ? OR email = ?");
         $stmt->execute([$username, $email]);
         if ($stmt->fetchColumn() > 0) {
-            show_error('Tài khoản hoặc email đã tồn tại.');
+            show_error('Tài khoản hoặc email đã tồn tại tại Server ' . $server_id);
         } else {
-            $stmt = $pdo->prepare("INSERT INTO account (username, email, password, create_time, is_admin, ban, active) VALUES (?, ?, ?, NOW(), 0, 0, 1)");
+            $stmt = $active_pdo->prepare("INSERT INTO account (username, email, password, create_time, is_admin, ban, active) VALUES (?, ?, ?, NOW(), 0, 0, 1)");
             $stmt->execute([$username, $email, $password]);
-            show_success('Đăng ký thành công! Bạn có thể đăng nhập.');
+            show_success('Đăng ký thành công tại Server ' . $server_id . '! Bạn có thể đăng nhập.');
             redirect('/login');
         }
     }
@@ -61,6 +62,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label for="email" class="post-label">Email</label>
                         <input type="email" name="email" id="email" class="post-input" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="server" class="post-label">Chọn Server Đăng Ký</label>
+                        <select name="server" id="server" class="post-input">
+                            <option value="1">Server 1 (Rồng 1 Sao)</option>
+                            <option value="2">Server 2 (Rồng 2 Sao)</option>
+                        </select>
                     </div>
                     <!-- Đã xóa trường họ tên -->
                     <div class="form-group">

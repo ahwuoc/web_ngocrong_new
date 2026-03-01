@@ -2,14 +2,33 @@
 session_start();
 
 // Cấu hình
-define('SITE_URL', 'http://localhost/xampp/htdocs/');
+$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+define('SITE_URL', "$protocol://$host/");
 define('ASSETS_URL', SITE_URL . 'assets/');
 define('UPLOADS_URL', SITE_URL . 'uploads/');
 
 // Bao gồm file database
 require_once __DIR__ . '/../config/database.php';
 
-// Hàm tạo URL thân thiện
+// Xử lý chọn Server
+if (isset($_GET['server'])) {
+    $server_id = (int)$_GET['server'];
+    if (in_array($server_id, [1, 2])) {
+        $_SESSION['server_id'] = $server_id;
+    }
+}
+
+function get_server_id() {
+    return isset($_SESSION['server_id']) ? (int)$_SESSION['server_id'] : 1;
+}
+
+if (get_server_id() == 2) {
+    $pdo = $pdo2;
+} else {
+    $pdo = $pdo1;
+}
+
 function get_category_url($slug) {
     return $slug . '/';
 }

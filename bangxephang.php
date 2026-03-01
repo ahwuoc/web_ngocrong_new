@@ -3,7 +3,6 @@ require_once 'includes/functions.php';
 
 global $pdo;
 
-// Hàm parse sức mạnh từ datapoint (copy từ profile.php)
 function getPowerFromDatapoint($datapoint) {
     if (empty($datapoint)) {
         return 0;
@@ -16,8 +15,6 @@ function getPowerFromDatapoint($datapoint) {
     
     return 0;
 }
-
-// Hàm lấy ID nhiệm vụ từ data_task
 function getTaskIdFromDataTask($dataTask) {
     if (empty($dataTask)) {
         return 0;
@@ -30,8 +27,6 @@ function getTaskIdFromDataTask($dataTask) {
     
     return 0;
 }
-
-// Hàm lấy tên nhiệm vụ từ data_task
 function getTaskNameFromDataTask($dataTask) {
     global $pdo;
     
@@ -52,14 +47,12 @@ function getTaskNameFromDataTask($dataTask) {
                 return $task['name'];
             }
         } catch (Exception $e) {
-            // Fallback if task_main_template doesn't exist or query fails
         }
     }
     
     return 'Nhiệm vụ #' . (isset($taskId) ? $taskId : '0');
 }
 
-// Lấy TOP 10 nạp tiền (chỉ lấy nhân vật)
 $stmt = $pdo->prepare("
     SELECT p.name as player_name, COALESCE(a.danap, 0) as danap 
     FROM account a 
@@ -317,7 +310,15 @@ $topTask = $stmt->fetchAll();
     <div class="main-content">
         <div class="container">
             <div class="breadcrumb">
-                <a href="/">Trang chủ</a> > <span>Bảng xếp hạng</span>
+                <a href="/">Trang chủ</a> > <span>Bảng xếp hạng (Server <?= get_server_id() ?>)</span>
+            </div>
+            
+            <!-- Server Selector -->
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="display: inline-flex; gap: 10px; background: #fff; padding: 10px; border: 2px solid #222; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                    <a href="?server=1" class="tab-btn <?= get_server_id() == 1 ? 'active' : '' ?>" style="padding: 8px 15px; text-decoration: none; font-size: 1em;">Server 1</a>
+                    <a href="?server=2" class="tab-btn <?= get_server_id() == 2 ? 'active' : '' ?>" style="padding: 8px 15px; text-decoration: none; font-size: 1em;">Server 2</a>
+                </div>
             </div>
             
             <div class="rankings-container">
